@@ -4,6 +4,12 @@ Private Fork of noflo/noflo-ui project.
 
 For changes that you want to commit to noflo/noflo-ui for future releases, please commit to WilliamRClark/noflo-ui and create a Pull Request.
 
+## Notes:
+To customize our UI, run setEnv.sh prior to running the build.
+'''bash
+source ./setEnv.sh
+'''
+
 # NoFlo Development Environment
 
 The NoFlo Development Environment is an offline-capable, client-side web application
