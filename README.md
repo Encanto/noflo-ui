@@ -2,7 +2,7 @@
 
 Private Fork of noflo/noflo-ui project.
 
-For changes that you want to commit to noflo/noflo-ui for future releases, please commit to WilliamRClark/noflo-ui and create a Pull Request.
+For changes that you want to commit to noflo/noflo-ui for future releases, please commit to WilliamRClark/noflo-ui and create a Pull Request.  Changes to our UI / Look and Feel should go here.
 
 # NoFlo Development Environment
 
