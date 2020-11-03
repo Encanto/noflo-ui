@@ -158,6 +158,10 @@ module.exports = function () {
             replacement: process.env.NOFLO_APP_VERSION || '<%= pkg.version %>',
           },
           {
+            pattern: /\$NOFLO_ROOT_DIR/ig,
+            replacement: process.env.NOFLO_ROOT_DIR || '',
+          },
+          {
             pattern: /\$NOFLO_THEME/ig,
             replacement: process.env.NOFLO_THEME || 'noflo',
           },
