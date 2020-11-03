@@ -276,6 +276,7 @@ ga('send', 'pageview');
   this.loadNpmTasks('grunt-exec');
   this.loadNpmTasks('grunt-contrib-clean');
   this.loadNpmTasks('grunt-string-replace');
+  this.loadNpmTasks('grunt-html-imports');
 
   // Grunt plugins used for mobile app building
   this.loadNpmTasks('grunt-contrib-compress');
@@ -321,6 +322,7 @@ ga('send', 'pageview');
     'build_noflo',
     'build_polymer',
     'string-replace:app',
+    'html_imports',
     'compress',
   ]);
   this.registerTask('rebuild', [
