@@ -6,3 +6,4 @@ export NOFLO_APP_LOADING='Preparing Encanto 2 UI...'
 export NOFLO_ORGANIZATION='Encanto²' 
 export NOFLO_APP_DESCRIPTION='Enterprise Intelligence at your fingertips!'
 export NOFLO_USER_LOGIN_ENABLED=false
+export NOFLO_ROOT_DIR='private/drive-ui/'
