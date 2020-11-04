@@ -15,8 +15,8 @@ module.exports = function () {
     // Vulcanization compiles the Polymer elements into a HTML file
     exec: {
       vulcanize: {
-        command: 'polymer-bundler ../../index.dist.html > ../../index.html',
-        cwd: __dirname + '/node_modules/.bin/',
+        command: `${path.resolve(__dirname, './node_modules/.bin/polymer-bundler')} index.dist.html > index.html`,
+        cwd: __dirname,
       },
     },
 
@@ -161,6 +161,9 @@ module.exports = function () {
             replacement: process.env.NOFLO_APP_VERSION || '<%= pkg.version %>',
           },
           {
+            pattern: /\$NOFLO_ROOT_DIR/ig,
+            replacement: process.env.NOFLO_ROOT_DIR || '',
+          },          {
             pattern: /\$NOFLO_THEME/ig,
             replacement: process.env.NOFLO_THEME || 'noflo',
           },
