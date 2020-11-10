@@ -1,7 +1,7 @@
 const noflo = require('noflo');
 const { v4: uuid } = require('uuid');
 
-const iframeAddress = 'https://noflojs.org/noflo-browser/everything.html?fbp_noload=true&fbp_protocol=iframe';
+const iframeAddress = 'http://localhost:3000/noflo-browser/everything.html?fbp_noload=true&fbp_protocol=iframe';
 
 const ensureOneIframeRuntime = (runtimes) => {
   const foundLocal = runtimes.find((runtime) => {
