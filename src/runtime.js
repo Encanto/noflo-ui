@@ -134,7 +134,7 @@ exports.loadGraph = (source) => new Promise(((resolve, reject) => {
 
 exports.isDefaultRuntime = (runtime) => {
   if ((runtime.protocol === 'iframe')
-    && (runtime.address === 'https://localhost:3000/noflo-browser/everything.html?fbp_noload=true&fbp_protocol=iframe')) {
+    && (runtime.address === '$NOFLO_BROWSER_SERVICE/everything.html?fbp_noload=true&fbp_protocol=iframe')) {
     return true;
   }
   return false;

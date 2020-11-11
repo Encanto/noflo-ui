@@ -7,4 +7,4 @@ export NOFLO_ORGANIZATION='Encanto²'
 export NOFLO_APP_DESCRIPTION='Enterprise Intelligence at your fingertips!'
 export NOFLO_USER_LOGIN_ENABLED=false
 export NOFLO_ROOT_DIR='private/drive-ui/'
-export NOFLO_WEBSITE='http://localhost:3000'
+export NOFLO_BROWSER_SERVICE='http://localhost:3000/browser'
