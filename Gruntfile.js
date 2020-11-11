@@ -153,6 +153,10 @@ module.exports = function () {
             replacement: process.env.NOFLO_WEBSITE || 'http://noflojs.org',
           },
           {
+            pattern: /\$NOFLO_BROWSER_SERVICE/ig,
+            replacement: process.env.NOFLO_BROWSER_SERVICE || 'https://noflojs.org/noflo-browser',
+          },
+          {
             pattern: /\$NOFLO_APP_DESCRIPTION/ig,
             replacement: process.env.NOFLO_APP_DESCRIPTION || 'Flow-Based Programming Environment',
           },
