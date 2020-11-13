@@ -178,7 +178,7 @@ Polymer({
         <ul class="tabs">
           <li on-click="openLocal" class\$="[[_isSelectedView('local', projectList)]]">On device</li>
           <template is="dom-if" if="[[_canGithub(user)]]">
-          <li on-click="openGithub" class\$="[[_isSelectedView('github', projectList)]]">GitHub</li>
+          <!-- <li on-click="openGithub" class\$="[[_isSelectedView('github', projectList)]]">GitHub</li> -->
           </template>
         </ul>
         <ul class="projects">
