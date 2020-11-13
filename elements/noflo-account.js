@@ -242,7 +242,7 @@ Polymer({
         </div>
       </template>
     </template>
-    <template is="dom-if" if="{{!user.flowhub-user}}">
+    <template is="dom-if" if="{{false}}">
       <div class="banner">
         Logging into \$NOFLO_APP_TITLE enables you to synchronize projects with Github. By subscribing to Flowhub you directly support NoFlo development, and help us all get to the future of programming faster.
         <div>
