@@ -175,14 +175,14 @@ Polymer({
         </div>
       </div>
     </template>
-    <template is="dom-if" if="{{!user.flowhub-user}}">
+    <template is="dom-if" if="{{false}}">
       <div class="toolbar">
         <a id="loginbutton" class="login" on-click="login">Login</a>
       </div>
     </template>
     </section>
     </nav>
-    <template is="dom-if" if="{{user.flowhub-user}}">
+    <template is="dom-if" if="{{false}}">
       <template is="dom-if" if="{{askForScope.length}}">
         <div class="banner">
           To be able to synchronize your GitHub projects, [[env.NOFLO_APP_TITLE]] needs repository access permissions. <a href="https://docs.flowhub.io/github-integration/" target="_blank">Read more</a>
