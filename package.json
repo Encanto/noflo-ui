@@ -42,7 +42,7 @@
     "octo": "git+https://github.com/bergie/octo.git#patched",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "the-graph": "git+https://21e7b2eafc97c0beb38802cb1dc884c2f0f2f71c:x-oauth-basic@github.com/Encanto/the-graph.git#v2.0-devel",
+    "the-graph": "git+https://f9985939821de561cc501ec464dee01da0b9d9b4:x-oauth-basic@github.com/Encanto/the-graph.git#v2.0-devel",
     "underscore": "^1.9.1",
     "uuid": "^8.3.0"
   },
