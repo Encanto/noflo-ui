@@ -103,7 +103,7 @@ describe('Opening a Runtime', () => {
         id: runtimeDefinition.id,
         secret: runtimeDefinition.secret,
       });
-      iframe.src = `/base/index.html#runtime/endpoint?${endpointUrl}`;
+      iframe.src = `/base/browser/index.html#runtime/endpoint?${endpointUrl}`;
       return waitForElement(`iframe.iframe-runtime[data-runtime='${runtimeDefinition.id}']`)
         .then(element => new Promise((resolve) => {
           rtIframe = element;
@@ -224,7 +224,7 @@ describe('Opening a Runtime', () => {
         .then((eventsList) => {
           const packets = Array.prototype.slice.call(eventsList.querySelectorAll('li.data'));
           const packetValues = packets.map(p => p.innerText);
-          chai.expect(packetValues).to.eql(['packet one']);
+          chai.expect(packetValues).to.eql(['"packet one"']);
         }));
       it('closing the edge inspector', () => waitForElement('noflo-ui the-graph-editor the-graph svg.app-svg')
         .then((edge) => {

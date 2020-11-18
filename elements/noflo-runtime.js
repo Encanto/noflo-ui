@@ -1,5 +1,6 @@
 import { Polymer, html } from '@polymer/polymer/polymer-legacy';
 import { dom as PolymerDom } from '@polymer/polymer/lib/legacy/polymer.dom';
+import ReactDOM from 'react-dom';
 import TestStatus from '../src/components/TestStatus';
 import './noflo-runtime-selector';
 import './noflo-runtime-testdetails';
@@ -354,6 +355,8 @@ Polymer({
         return 'picture-o';
       case 'sndflo':
         return 'music';
+      case 'flowtrace-replay':
+        return 'pause-circle';
       default:
         return 'cog';
     }

@@ -1,5 +1,9 @@
 import { Polymer, html } from '@polymer/polymer/polymer-legacy';
 import { dom as PolymerDom } from '@polymer/polymer/lib/legacy/polymer.dom';
+import ReactDOM from 'react-dom';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'hammerjs';
+import TheGraph from 'the-graph';
 import { unnamespace } from '../src/collections';
 import './the-graph-styles';
 
@@ -175,7 +179,7 @@ Polymer({
     // Initializes the autolayouter
     this.autolayouter = klayNoflo.init({
       onSuccess: this.applyAutolayout.bind(this),
-      workerScript: 'browser/vendor/klayjs/klay.js',
+      workerScript: 'vendor/klayjs/klay.js',
     });
     this.themeChanged();
   },
@@ -312,7 +316,7 @@ Polymer({
 
     // Setup app
     PolymerDom(this.$.svgcontainer).innerHTML = '';
-    this.appView = ReactDOM.render(window.TheGraph.App({
+    this.appView = ReactDOM.render(TheGraph.App({
       graph: this.graph,
       width: this.width,
       minZoom: this.minZoom,

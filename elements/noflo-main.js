@@ -1,6 +1,6 @@
 import { Polymer, html } from '@polymer/polymer/polymer-legacy';
 import { dom as PolymerDom } from '@polymer/polymer/lib/legacy/polymer.dom';
-import noflo from 'noflo';
+import { Graph } from 'fbp-graph';
 import runtimeInfo from '../runtimeinfo';
 import './noflo-account';
 import './noflo-new-project';
@@ -96,8 +96,7 @@ Polymer({
         position: relative;
         cursor: pointer;
       }
-      ul.projects li.add,
-      ul.projects li.plan {
+      ul.projects li.add {
         background-color: var(--noflo-ui-text);
         color: var(--noflo-ui-background);
         cursor: default;
@@ -153,10 +152,6 @@ Polymer({
         overflow: hidden;
         color: hsl(189, 11%, 50%);
       }
-      ul.projects li.plan p {
-        width: 100px;
-        font-size: 9px;
-      }
       ul.projects li a {
         color: var(--noflo-ui-background);
         text-decoration: none;
@@ -166,7 +161,7 @@ Polymer({
       <section id="projects">
         <h2>Projects
           <template is="dom-if" if="[[_isLocalProjects(projectList)]]">
-          <small>[[projects.length]]</small>
+          <small>[[numberOfLocalProjects(projects)]]</small>
           </template>
           <template is="dom-if" if="[[!_isLocalProjects(projectList)]]">
           <small>[[numberOfRemoteProjects(remoteProjects)]]</small>
@@ -187,7 +182,7 @@ Polymer({
             <h2>New project</h2>
             <button id="newproject" on-click="newProject">Create</button>
           </li>
-          <template is="dom-repeat" items="[[projects]]" as="project">
+          <template is="dom-repeat" items="[[projects]]" as="project" filter="filterLocalProjects">
             <li on-click="openProject" data-id\$="[[project.id]]">
               <noflo-project-card project="[[project]]"></noflo-project-card>
             </li>
@@ -198,17 +193,6 @@ Polymer({
             <h2>Add a repository</h2>
             <button id="newrepository" on-click="newRepository">Add</button>
           </li>
-          <template is="dom-if" if="[[_isFree(user)]]">
-          <li class\$="[[_planClass(user)]]">
-            <h2>Flowhub free</h2>
-            <p>Access only to public GitHub repositories.</p>
-            <form method="post" action="https://plans.flowhub.io/auth/flowhub">
-              <input type="hidden" name="username" value="[[user.github-username]]">
-              <input type="hidden" name="password" value="[[user.flowhub-token]]">
-              <input type="submit" id="cta" value="Upgrade">
-            </form>
-          </li>
-          </template>
           <template is="dom-repeat" items="[[remoteProjects]]" as="project" filter="filterRemoteProjects">
             <li class="remote" on-click="downloadProject" data-repo\$="[[project.repo]]">
               <noflo-repo-card project="[[project]]"></noflo-repo-card>
@@ -383,6 +367,17 @@ Polymer({
     return true;
   },
 
+  numberOfLocalProjects(projects) {
+    return projects.filter(this.filterLocalProjects.bind(this)).length;
+  },
+
+  filterLocalProjects(project) {
+    if (project.type === 'flowtrace-replay') {
+      return false;
+    }
+    return true;
+  },
+
   numberOfAvailableRuntimes(runtimes) {
     return runtimes.filter(this.filterAvailableRuntimes.bind(this)).length;
   },
@@ -393,6 +388,10 @@ Polymer({
     }
     if (!runtime.seen) {
       // Non-persistent runtime, don't show
+      return false;
+    }
+    if (runtime.type === 'flowtrace-replay') {
+      // Flowtrace runtimes don't make sense to show
       return false;
     }
     if (runtime.protocol === 'opener' && !window.opener) {
@@ -528,7 +527,7 @@ Polymer({
     PolymerDom(document.body).appendChild(dialog);
     dialog.addEventListener('new', (ev) => {
       const project = ev.detail;
-      const graph = new noflo.Graph('main');
+      const graph = new Graph('main');
       const graphId = `${project.id}/main`;
       graph.setProperties({
         id: graphId,
@@ -601,13 +600,5 @@ Polymer({
       return 'selected';
     }
     return '';
-  },
-
-  _isFree(user) {
-    return user['flowhub-plan'] === 'free';
-  },
-
-  _planClass(user) {
-    return `plan ${user['flowhub-plan']}`;
   },
 });

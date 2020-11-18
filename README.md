@@ -1,9 +1,3 @@
-# noflo/noflo-ui
-
-Private Fork of noflo/noflo-ui project.
-
-For changes that you want to commit to noflo/noflo-ui for future releases, please commit to WilliamRClark/noflo-ui, or you own personal fork and create a Pull Request.  Changes to our UI / Look and Feel should go here.
-
 # NoFlo Development Environment
 
 The NoFlo Development Environment is an offline-capable, client-side web application
@@ -16,23 +10,11 @@ Check the [project ChangeLog](https://github.com/noflo/noflo-ui/blob/master/CHAN
 
 ## Hosted version
 
-[Flowhub](http://app.flowhub.io) is a hosted and commercially supported version of the NoFlo Development Environment.
-It is free to use for open source projects, and for private projects if you do not need Github integration.
+[Flowhub](https://app.flowhub.io) is a hosted version of the NoFlo Development Environment.
 
 If you just want to create applications, we recommend that you use this version instead of building your own from source.
 
-<a href="http://app.flowhub.io"><img alt="Start Flowhub webapp" src="https://flowhub.io/assets/app-web.svg" width="400"></a>
-
-By [subscribing to Flowhub](https://plans.flowhub.io) you directly support NoFlo development, and help us all get to the future of programming faster.
-
-Please read more from <http://flowhub.io/documentation/>.
-
-## Support
-
-[![Flowhub logo](https://flowhub.io/assets/banner-github.png)](https://flowhub.io)
-
-noflo-ui is a part of [Flowhub](https://flowhub.io), a platform for building robust [IoT systems](https://flowhub.io/iot) and web services.<br>
-We offer an [Integrated Development Environment](https://app.flowhub.io) and [consulting services](https://flowhub.io/consulting).
+<a href="https://app.flowhub.io"><img alt="Start Flowhub webapp" src="https://flowhub.io/assets/app-web.svg" width="400"></a>
 
 ## Usage with different FBP systems
 
@@ -83,7 +65,7 @@ docker build -t noflo-ui .
 
 #### Run
 ```bash
-docker run -d -it -p 9999:9999 noflo-ui
+docker run -d -p 9999:80 noflo-ui
 ```
 
 Once it is built and the server is running you can access the UI at http://localhost:9999/index.html
@@ -106,17 +88,17 @@ This will provide you with all the needed development dependencies. Now you can 
 
 You have to run this command as an administrator on Windows.
 
-If you prefer, you can also start a watcher process that will do a rebuild whenever one of the files changes:
-
-    $ npm run watch
-
 Serve the UI using a webserver, then open the URL it in a web browser. Example:
 
     $ npm start
 
+If you prefer, you can instead start a webpack dev server process that will do a rebuild whenever one of the files changes:
+
+    $ npm run dev
+
 Once it is built and the server is running you can access the UI at `http://localhost:9999/index.html`
 
-In addition to this project, the other repository of interest is the [the-graph](https://github.com/the-grid/the-graph) graph editor widget used for editing flows.
+In addition to this project, the other repository of interest is the [the-graph](https://github.com/flowhub/the-graph) graph editor widget used for editing flows.
 
 
 ### Architecture
