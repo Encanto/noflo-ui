@@ -114,6 +114,7 @@ module.exports = {
       NOFLO_WEBSITE: 'https://noflojs.org',
       NOFLO_APP_DESCRIPTION: 'Enterprise Intelligence at your fingertips!',
       NOFLO_APP_VERSION: pkg.version,
+      NOFLO_BROWSER_SERVICE: 'http://localhost:3000/browser',
       // GitHub login
       NOFLO_USER_LOGIN_ENABLED: true,
       NOFLO_OAUTH_PROVIDER: 'https://github.com',
