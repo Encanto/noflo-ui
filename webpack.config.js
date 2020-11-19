@@ -107,12 +107,12 @@ module.exports = {
     new EnvironmentPlugin({
       // UI theming
       NOFLO_THEME: theme,
-      NOFLO_APP_NAME: 'NoFlo UI',
-      NOFLO_APP_TITLE: 'NoFlo Development Environment',
-      NOFLO_APP_LOADING: 'Preparing NoFlo UI...',
-      NOFLO_ORGANIZATION: 'NoFlo Community',
+      NOFLO_APP_NAME: 'Encanto²',
+      NOFLO_APP_TITLE: 'Encanto² Business Intelligence',
+      NOFLO_APP_LOADING: 'Preparing Encanto² UI...',
+      NOFLO_ORGANIZATION: 'Encanto²',
       NOFLO_WEBSITE: 'https://noflojs.org',
-      NOFLO_APP_DESCRIPTION: 'Flow-Based Programming Environment',
+      NOFLO_APP_DESCRIPTION: 'Enterprise Intelligence at your fingertips!',
       NOFLO_APP_VERSION: pkg.version,
       // GitHub login
       NOFLO_USER_LOGIN_ENABLED: true,
