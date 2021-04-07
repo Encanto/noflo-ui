@@ -35,7 +35,7 @@
     "noflo-interaction": "~0.3.0",
     "noflo-objects": "~0.7.0",
     "noflo-polymer": "^3.0.0",
-    "noflo-runtime-base": "^0.10.0",
+    "noflo-runtime-base": "^0.13.1",
     "noflo-runtime-postmessage": "^0.10.0",
     "noflo-strings": "~0.4.0",
     "observe-js": "^0.5.7",
