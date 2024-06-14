@@ -1,0 +1,23 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:mime:20170907':
+    - octo > superagent > form-data > mime:
+        patched: '2024-06-14T03:30:26.639Z'
+        id: 'npm:mime:20170907'
+        path: octo > superagent > form-data > mime
+    - noflo-github > octo > superagent > form-data > mime:
+        patched: '2024-06-14T03:30:26.639Z'
+        id: 'npm:mime:20170907'
+        path: noflo-github > octo > superagent > form-data > mime
+  'npm:qs:20140806-1':
+    - octo > superagent > qs:
+        patched: '2024-06-14T03:30:26.639Z'
+        id: 'npm:qs:20140806-1'
+        path: octo > superagent > qs
+    - noflo-github > octo > superagent > qs:
+        patched: '2024-06-14T03:30:26.639Z'
+        id: 'npm:qs:20140806-1'
+        path: noflo-github > octo > superagent > qs
